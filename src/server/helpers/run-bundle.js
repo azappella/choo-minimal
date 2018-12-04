@@ -9,7 +9,7 @@ const options = {
   outFile: 'index.html', // The name of the outputFile
   cacheDir: './.cache', // The directory cache gets put in, defaults to .cache
   detailedReport: false, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
-  minify: true,
+  minify: false,
   hmr: false,
   logLevel: 1
 }

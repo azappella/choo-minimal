@@ -20,7 +20,6 @@ server.get('/favicon.ico', (req, res) => {
   res.end()
 })
 
-
 server.use((req, res) => {
     const hs = hyperstream({
         'body': app.toString(req.originalUrl, {})
