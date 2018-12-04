@@ -4,7 +4,7 @@ const navbar = require('../navbar')
 const logo = (logoSrc) => html`
     <div class="logo">
         <a href="/">
-            <img src="${logoSrc}" alt="Lightstreams logo" />
+            <img src="${logoSrc}" alt="Logo" />
         </a>
     </div>
 `
