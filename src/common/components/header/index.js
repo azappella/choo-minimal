@@ -11,7 +11,6 @@ const logo = (logoSrc) => html`
 
 const header = (state, emitter) => html`
     <header class="header">
-        ${logo('')}
         ${navbar(state, emitter)}
     </header>
 `
