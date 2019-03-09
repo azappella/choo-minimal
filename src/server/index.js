@@ -5,7 +5,7 @@ const path = require('path')
 const isProd = require('./helpers/is-prod')
 const createBundle = require('./helpers/run-bundle')
 const hyperstream = require('hyperstream')
-const streamRender = require('./render')
+const streamRender = require('./helpers/stream-render')
 
 if (isProd()) {
     server.use(require('compression')())
