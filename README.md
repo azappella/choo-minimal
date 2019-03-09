@@ -1,34 +1,23 @@
 # choo-minimal
 
-## Directory structure
+A minimal isormorphic starter template (i.e. boilerplate) for [choojs](https://choo.io)
+
+## Getting started
 
 ```
-bin
-- www
-- load-env
+git clone git@github.com:azappella/choo-minimal.git
+npm install
+npm start
+```
 
-public
-- img
-  - *.svg
-  - *.png
-  - *.jpg
-- *.js
-- *.css
-- *.map
+## Config
 
-src
-- client
-  - build
-  - store
-  - index.js
-- server
-  - helpers
-  - index.js
-- common
-  - components
-  - layout
-  - router
-
-package.json
+If you want to modify the default configuration or environment variables:
 
 ```
+cp .env.local.sample .env.local
+```
+
+Then open and edit the .env.local file
+
+

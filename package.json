@@ -1,18 +1,19 @@
 {
   "name": "choo-minimal",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "bin/www",
   "scripts": {
     "start": "node bin/load-env per-env",
     "start:production": "node bin/www",
-    "start:development": "parcel --port $PORT public/index.html",
-    "getenv": "node bin/load-env -p $ENV_VAR",
-    "getenv:publicUrl": "ENV_VAR=PUBLIC_URL npm run getenv",
-    "hello": "echo Hello $(npm run getenv:publicUrl)",
-    "server": "node bin/load-env per-env",
-    "server:production": "pm2 start bin/www --name 'website'",
+    "start:development": "parcel --port $PORT src/index.html",
     "build": "node bin/load-env per-env",
-    "build:production": "parcel build --public-url $(npm run getenv:publicUrl) --out-dir build public/index.html"
+    "build:development": "parcel build --out-dir public src/index.html",
+    "build:production": "parcel build --public-url $(npm run public-url) --out-dir public src/index.html",
+    "server": "node bin/load-env per-env",
+    "server:development": "pm2 start server.config.js --only $PROCESS_NAME-dev",
+    "server:production": "pm2 start server.config.js --only $PROCESS_NAME",
+    "load-env": "node bin/load-env -p $ENV_VAR",
+    "public-url": "ENV_VAR=PUBLIC_URL npm run load-env"
   },
   "author": "Andrew Zappella",
   "license": {
@@ -22,7 +23,6 @@
   "dependencies": {
     "choo": "^6.13.1",
     "compression": "^1.7.3",
-    "create-html": "^4.1.0",
     "cross-spawn": "^6.0.5",
     "dotenv": "^6.1.0",
     "dotenv-expand": "^4.2.0",
@@ -36,6 +36,7 @@
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "choo-devtools": "^2.5.1",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "pm2": "^3.3.1"
   }
 }

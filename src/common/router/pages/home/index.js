@@ -6,7 +6,7 @@ const home = (state, emitter) => html`
     <div class="home">
         ${header(state, emitter)}
         <main>
-          <section>The main section</section>
+          <section>The main section ${state.topic}</section>
         </main>
         ${footer(state, emitter)}
     </div>
