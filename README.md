@@ -10,6 +10,8 @@ npm install
 npm start
 ```
 
+This will start a development server with parcel.
+
 ## Config
 
 If you want to modify the default configuration or environment variables:
@@ -18,6 +20,24 @@ If you want to modify the default configuration or environment variables:
 cp .env.local.sample .env.local
 ```
 
-Then open and edit the .env.local file
+Then open and edit the .env.local file (e.g. change NODE_ENV to `production`)
 
+## Launch the server
 
+```
+npm run server
+```
+
+## Stop the server
+
+```
+npx pm2 stop choo-minimal-dev
+```
+
+## Kill pm2 processes
+
+The following will kill all processes running with pm2 (be careful where you run it)
+
+```
+npx pm2 kill
+```
